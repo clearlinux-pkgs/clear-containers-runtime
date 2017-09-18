@@ -1,0 +1,42 @@
+From c4dd796d26fad365a38c1188f15fbe31268478e3 Mon Sep 17 00:00:00 2001
+From: "James O. D. Hunt" <james.o.hunt@intel.com>
+Date: Mon, 18 Sep 2017 17:16:42 +0100
+Subject: [PATCH] build: Install bash completions below DESTDIR
+
+Honour the DESTDIR variable when installing the bash completion script.
+
+Fixes #566.
+
+Signed-off-by: James O. D. Hunt <james.o.hunt@intel.com>
+---
+ Makefile | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index 16eecd7d..9348cf34 100644
+--- a/Makefile
++++ b/Makefile
+@@ -76,9 +76,6 @@ PKGLIBDIR := $(LOCALSTATEDIR)/lib/$(CCDIR)
+ PKGRUNDIR := $(LOCALSTATEDIR)/run/$(CCDIR)
+ PKGLIBEXECDIR := $(LIBEXECDIR)/$(CCDIR)
+ 
+-BASH_COMPLETIONS := data/completions/bash/cc-runtime
+-BASH_COMPLETIONSDIR := $(SHAREDIR)/bash-completion/completions
+-
+ KERNELPATH := $(PKGDATADIR)/vmlinuz.container
+ IMAGEPATH := $(PKGDATADIR)/clear-containers.img
+ 
+@@ -129,8 +126,13 @@ DESTTARGET := $(abspath $(DESTBINDIR)/$(TARGET))
+ DESTCONFDIR := $(DESTDIR)/$(SYSCONFDIR)/$(CCDIR)
+ DESTCONFIG := $(abspath $(DESTCONFDIR)/$(CONFIG_FILE))
+ 
++DESTSHAREDIR := $(DESTDIR)/$(SHAREDIR)
++
+ PAUSEDESTDIR := $(abspath $(DESTDIR)/$(PAUSEROOTPATH)/$(PAUSEBINRELPATH))
+ 
++BASH_COMPLETIONS := data/completions/bash/cc-runtime
++BASH_COMPLETIONSDIR := $(DESTSHAREDIR)/bash-completion/completions
++
+ # list of variables the user may wish to override
+ USER_VARS += BASH_COMPLETIONSDIR
+ USER_VARS += BINDIR
