@@ -28,12 +28,14 @@ export GOPATH="${PWD}/gopath/"
 mkdir -p "${GOPATH}/src/github.com/clearcontainers/"
 ln -sf "${PWD}" "${GOPATH}/src/github.com/clearcontainers/runtime"
 cd "${GOPATH}/src/github.com/clearcontainers/runtime"
-make DESTCONFIG=/etc/clear-containers/configuration.toml \
+make \
+	QEMUCMD=qemu-lite-system-x86_64 \
+  PAUSEROOTPATH=/usr/share/lib/clear-containers/runtime/bundles/pause_bundle/ \
 	PREFIX=/usr \
 	SYSCONFDIR=/etc \
 	LOCALSTATEDIR=/var \
 	SHAREDIR=/usr/share \
-	PROXYURL=unix:///usr/lib/systemd/system/cc3-proxy.socket
+	PROXYURL=unix:///var/run/clear-containers/proxy.sock
 
 %install
 rm -rf %{buildroot}
