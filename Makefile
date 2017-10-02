@@ -1,4 +1,4 @@
 PKG_NAME := clear-containers-runtime
-URL := https://github.com/clearcontainers/runtime/archive/3.0.0.tar.gz
+URL := https://github.com/clearcontainers/runtime/archive/3.0.1.tar.gz
 
 include ../common/Makefile.common
