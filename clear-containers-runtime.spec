@@ -1,23 +1,18 @@
 Name     : clear-containers-runtime
-Version  : 3.0.2
+Version  : 3.0.3
 Release  : 5
-URL      : https://github.com/clearcontainers/runtime/archive/3.0.2.tar.gz
-Source0  : https://github.com/clearcontainers/runtime/archive/3.0.2.tar.gz
+URL      : https://github.com/clearcontainers/runtime/archive/3.0.3.tar.gz
+Source0  : https://github.com/clearcontainers/runtime/archive/3.0.3.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0 BSD-3-Clause ISC MIT
 BuildRequires : go
 
-Patch0001: 678.patch
-
 %description
 This repository holds supplemental Go packages for low-level interactions with the operating system.
 
 %prep
-%setup -q -n runtime-3.0.2
-# fix hangs in Clear Linux
-%patch0001 -p1
-
+%setup -q -n runtime-3.0.3
 
 %build
 export http_proxy=http://127.0.0.1:9/
@@ -39,7 +34,7 @@ make \
 
 %install
 rm -rf %{buildroot}
-make install DESTDIR=%{buildroot} PREFIX=/usr SYSCONFDIR=/etc LOCALSTATEDIR=/usr/share SHAREDIR=/usr/share SCRIPTS_DIR=%{buildroot}/usr/bin/cc-collect-data.sh
+make install DESTDIR=%{buildroot} PREFIX=/usr SYSCONFDIR=/etc LOCALSTATEDIR=/usr/share SHAREDIR=/usr/share SCRIPTS_DIR=/usr/bin/
 
 
 %files
