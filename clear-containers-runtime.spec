@@ -1,8 +1,8 @@
 Name     : clear-containers-runtime
-Version  : 3.0.3
+Version  : 3.0.4
 Release  : 6
-URL      : https://github.com/clearcontainers/runtime/archive/3.0.3.tar.gz
-Source0  : https://github.com/clearcontainers/runtime/archive/3.0.3.tar.gz
+URL      : https://github.com/clearcontainers/runtime/archive/3.0.4.tar.gz
+Source0  : https://github.com/clearcontainers/runtime/archive/3.0.4.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0 BSD-3-Clause ISC MIT
@@ -12,7 +12,7 @@ BuildRequires : go
 This repository holds supplemental Go packages for low-level interactions with the operating system.
 
 %prep
-%setup -q -n runtime-3.0.3
+%setup -q -n runtime-3.0.4
 
 %build
 export http_proxy=http://127.0.0.1:9/
