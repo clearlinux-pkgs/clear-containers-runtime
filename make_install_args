@@ -1,0 +1,1 @@
+QEMUCMD=qemu-lite-system-x86_64 PAUSEROOTPATH=/usr/share/lib/clear-containers/runtime/bundles/pause_bundle/ PREFIX=/usr SYSCONFDIR=/etc LOCALSTATEDIR=/var SHAREDIR=/usr/share PROXYURL=unix:///var/run/clear-containers/proxy.sock

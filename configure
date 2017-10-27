@@ -1,0 +1,4 @@
+;export GOPATH="${PWD}/gopath/"
+;mkdir -p "${GOPATH}/src/github.com/clearcontainers/"
+;ln -sf "${PWD}" "${GOPATH}/src/github.com/clearcontainers/runtime"
+;cd "${GOPATH}/src/github.com/clearcontainers/runtime"
