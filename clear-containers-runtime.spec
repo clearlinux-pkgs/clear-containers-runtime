@@ -4,7 +4,7 @@
 #
 Name     : clear-containers-runtime
 Version  : 3.0.13
-Release  : 15
+Release  : 16
 URL      : https://github.com/clearcontainers/runtime/archive/3.0.13.tar.gz
 Source0  : https://github.com/clearcontainers/runtime/archive/3.0.13.tar.gz
 Summary  : No detailed summary available
@@ -46,7 +46,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1515857388
+export SOURCE_DATE_EPOCH=1515857645
 %autogen --disable-static ;export GOPATH="${PWD}/gopath/" \
 ;mkdir -p "${GOPATH}/src/github.com/clearcontainers/" \
 ;ln -sf "${PWD}" "${GOPATH}/src/github.com/clearcontainers/runtime" \
@@ -54,7 +54,7 @@ export SOURCE_DATE_EPOCH=1515857388
 make  %{?_smp_mflags} QEMUCMD=qemu-lite-system-x86_64 PAUSEROOTPATH=/usr/share/lib/clear-containers/runtime/bundles/pause_bundle/ PREFIX=/usr SYSCONFDIR=/etc LOCALSTATEDIR=/var SHAREDIR=/usr/share PROXYURL=unix:///var/run/clear-containers/proxy.sock
 
 %install
-export SOURCE_DATE_EPOCH=1515857388
+export SOURCE_DATE_EPOCH=1515857645
 rm -rf %{buildroot}
 %make_install QEMUCMD=qemu-lite-system-x86_64 PAUSEROOTPATH=/usr/share/lib/clear-containers/runtime/bundles/pause_bundle/ PREFIX=/usr SYSCONFDIR=/etc LOCALSTATEDIR=/var SHAREDIR=/usr/share PROXYURL=unix:///var/run/clear-containers/proxy.sock BASH_COMPLETIONSDIR=%{buildroot}/usr/share/bash-completion/completions/cc-runtime
 
