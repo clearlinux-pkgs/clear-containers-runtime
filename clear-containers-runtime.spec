@@ -4,7 +4,7 @@
 #
 Name     : clear-containers-runtime
 Version  : 3.0.23
-Release  : 28
+Release  : 29
 URL      : https://github.com/clearcontainers/runtime/archive/3.0.23.tar.gz
 Source0  : https://github.com/clearcontainers/runtime/archive/3.0.23.tar.gz
 Summary  : No detailed summary available
